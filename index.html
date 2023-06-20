@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>spendwise</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <h1>spendwise</h1>
+  
+  <div id="result">
+    <h2>Daily Budget: Rs. <span id="daily-budget-display">0</span></h2>
+    <h2>Summary for <span id="date"></span></h2>
+    <p id="remaining"></p>
+    <p>Excess/Deficit: Rs. <span id="excess-deficit">0</span></p>
+  </div>
+
+  <br><br>
+
+  <form id="budget-form">
+    <h2>Set Daily Budget</h2>
+    <label for="daily-budget">Budget:</label>
+    <input type="number" id="daily-budget" placeholder="Enter your daily budget">
+    <br><br>
+    <button type="submit">Confirm</button>
+  </form>
+
+  <form id="expense-form">
+    <h2>Enter Daily Expenses</h2>
+    <label for="expense-amount">Expenses:</label>
+    <input type="number" id="expense-amount" placeholder="Enter your expenses for the day">
+    <br><br>
+    <button type="submit">Add</button>
+  </form>
+
+  <footer>
+    <div id="creator-credits">
+      <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a></p>
+    </div>
+    <div id="copyright">
+      <p>&copy; <span id="current-year"></span> </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
