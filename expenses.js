@@ -13,12 +13,13 @@ window.addEventListener('DOMContentLoaded', function () {
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
     var dailyBudget = this.localStorage.getItem('dailyBudget');
-    var accumulatedExcessDeficit = this.localStorage.getItem("accumulatedExcessDeficit")
+    var balanceAmount = this.localStorage.getItem("balanceAmount")
+    // var accumulatedExcessDeficit = this.localStorage.getItem("accumulatedExcessDeficit")
     var formattedDate = this.localStorage.getItem("date")
     document.getElementById('daily-budget-display').textContent = dailyBudget;
     document.getElementById('date').textContent = formattedDate;
-    document.getElementById('excess-deficit').textContent = accumulatedExcessDeficit
-    this.localStorage.setItem("remainingBudget",dailyBudget)
+    document.getElementById('excess-deficit').textContent = balanceAmount
+    this.localStorage.setItem("remainingBudget", dailyBudget)
 
     // resetAccumulatedExcessDeficit()
     // var resultMessage = this.localStorage.getItem("result")
@@ -45,12 +46,18 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
     document.getElementById('date').textContent = formattedDate;
 
     var remainingBudget = localStorage.getItem("remainingBudget")
+    remainingBudget = remainingBudget - expenseAmount
+    localStorage.setItem("balanceAmount", remainingBudget)
 
-    var excessDeficitField = document.getElementById('excess-deficit');
-    var accumulatedExcessDeficit = parseFloat(excessDeficitField.textContent) + remainingBudget;
+    // var balanceAmount = this.localStorage.getItem("balanceAmount")
+    // document.getElementById('excess-deficit').textContent = balanceAmount
 
-    excessDeficitField.textContent = accumulatedExcessDeficit;
-    localStorage.setItem("accumulatedExcessDeficit", parseFloat(accumulatedExcessDeficit))
+    // var excessDeficitField = document.getElementById('excess-deficit');
+
+    // var accumulatedExcessDeficit = parseFloat(excessDeficitField.textContent) + remainingBudget;
+
+    // excessDeficitField.textContent = accumulatedExcessDeficit;
+    // localStorage.setItem("accumulatedExcessDeficit", parseFloat(accumulatedExcessDeficit))
 
     document.getElementById('expense-form').reset();
 
