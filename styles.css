@@ -47,12 +47,12 @@ body {
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #212154;
+    background-color: #4CAF50;
+    color: #fff;
 }
 
-/* .sidebar .active {
-    background-color: rgba(255, 255, 255, 0.4);
+/* .sidebar--active {
+    background-color: #586313;
 } */
 
 .hamburger {
@@ -144,6 +144,10 @@ button {
     display: block;
     margin: 0 auto;
     /* Increased font size for mobile */
+}
+
+.reset {
+    width: 25%;
 }
 
 #result {

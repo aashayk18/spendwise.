@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>spendwise</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div class="sidebar" id="sidebar">
@@ -24,7 +26,7 @@
 
   <div id="page1" class="content-shift">
     <h1>spendwise</h1>
-  
+
     <form id="budget-form">
       <h2>Set Daily Budget</h2>
       <label for="daily-budget">Budget:</label>
@@ -32,9 +34,11 @@
       <br><br>
       <button type="submit">Confirm</button>
     </form>
+    <br><br>
+    <button class = "reset" onclick="resetAll()">Reset</button>
   </div>
 
-  <script src="script.js"></script>
+  <script src="index.js"></script>
 
   <footer>
     <div id="creator-credits">
@@ -46,4 +50,5 @@
   </footer>
 
 </body>
+
 </html>
