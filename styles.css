@@ -1,20 +1,94 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: #012725;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #f1f1f1;
     padding: 20px;
-    background-color: #021a2c;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    z-index: 999;
+    border-radius: 5px;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    color: #012725;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #212154;
+}
+
+/* .sidebar .active {
+    background-color: rgba(255, 255, 255, 0.4);
+} */
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
     display: flex;
     flex-direction: column;
-    min-height: 75vh;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger__line {
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+.content-shift {
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.open~.content-shift {
+    margin-left: 250px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     color: #fff;
     font-family: "Pacifico", cursive;
     font-weight: 1;
-    font-size: 45px; /* Increased font size for mobile */
+    font-size: 45px;
 }
 
 form {
@@ -26,18 +100,23 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
     margin-bottom: 10px;
-    font-size: 20px; /* Increased font size for mobile */
+    font-size: 20px;
+    /* Increased font size for mobile */
     color: #333333;
 }
 
 label {
     display: block;
     margin-bottom: 10px;
-    font-size: 16px; /* Increased font size for mobile */
+    font-size: 16px;
+    /* Increased font size for mobile */
     color: #333333;
 }
 
@@ -46,8 +125,11 @@ input[type="number"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #cccccc;
-    font-size: 14px; /* Increased font size for mobile */
+    font-size: 14px;
+    /* Increased font size for mobile */
     box-sizing: border-box;
+     display: block;
+    margin: 0 auto;
 }
 
 button {
@@ -58,11 +140,14 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Increased font size for mobile */
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    /* Increased font size for mobile */
 }
 
 #result {
-    margin-top: 20px;
+    margin-top: 100px;
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
@@ -71,15 +156,18 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 50%;
+    margin: 0 auto;
 }
 
 p {
-    font-size: 18px; /* Increased font size for mobile */
+    font-size: 18px;
+    /* Increased font size for mobile */
     color: #333333;
 }
 
 #daily-budget-display {
-    color: #000;
+    color: #333333;
 }
 
 #excess-deficit {
@@ -102,7 +190,7 @@ footer {
     bottom: 0;
     width: 100%;
     padding: 10px;
-    background-color: #021a2c;
+    background-color: #012725;
 }
 
 footer a {
@@ -117,32 +205,7 @@ footer a {
 
 #creator-credits p,
 #copyright p {
-    font-size: 16px; /* Increased font size for mobile */
+    font-size: 16px;
+    /* Increased font size for mobile */
     color: white;
-}
-
-@media only screen and (max-width: 768px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    label {
-        font-size: 14px;
-    }
-
-    input[type="number"] {
-        font-size: 12px;
-    }
-
-    button {
-        font-size: 14px;
-    }
-
-    p {
-        font-size: 16px;
-    }
 }
