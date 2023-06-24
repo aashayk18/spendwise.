@@ -36,7 +36,6 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
     event.preventDefault();
 
     var expenseAmount = parseInt(document.getElementById('expense-amount').value);
-    var dailyBudget = parseInt(localStorage.getItem('dailyBudget'));
     var currentDate = new Date();
     var day = String(currentDate.getDate()).padStart(2, '0');
     var month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -47,7 +46,8 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
 
     var remainingBudget = localStorage.getItem("remainingBudget")
     remainingBudget = remainingBudget - expenseAmount
-    localStorage.setItem("balanceAmount", remainingBudget)
+    localStorage.setItem("remainingBudget", remainingBudget)
+    document.getElementById("excess-deficit").innerHTML = remainingBudget;
 
     // var balanceAmount = this.localStorage.getItem("balanceAmount")
     // document.getElementById('excess-deficit').textContent = balanceAmount
