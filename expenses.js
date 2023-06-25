@@ -2,7 +2,6 @@ document.getElementById('hamburger').addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('open');
 });
 
-
 //  localStorage.setItem("accumulatedExcessDeficit",parseFloat(0))
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -34,21 +33,52 @@ function toggleSidebar() {
 
 document.getElementById('expense-form').addEventListener('submit', function (event) {
     event.preventDefault();
-
+  
     var expenseAmount = parseInt(document.getElementById('expense-amount').value);
-    var dailyBudget = parseInt(localStorage.getItem('dailyBudget'));
     var currentDate = new Date();
     var day = String(currentDate.getDate()).padStart(2, '0');
     var month = String(currentDate.getMonth() + 1).padStart(2, '0');
     var year = String(currentDate.getFullYear()).slice(-2);
     var formattedDate = day + "/" + month + "/" + year;
-    localStorage.setItem("date", formattedDate)
+    localStorage.setItem("date", formattedDate);
     document.getElementById('date').textContent = formattedDate;
+  
+    var remainingBudget = parseInt(localStorage.getItem("remainingBudget"));
+    remainingBudget = remainingBudget - expenseAmount;
+    localStorage.setItem("remainingBudget", remainingBudget);
+    document.getElementById("excess-deficit").innerHTML = remainingBudget;
+  
+    if (remainingBudget < 0) {
+        document.getElementById("excess-deficit").classList.add('deficit');
+        document.getElementById("excess-deficit").classList.remove('excess');
+    } else {
+        document.getElementById("excess-deficit").classList.add('excess');
+        document.getElementById("excess-deficit").classList.remove('deficit');
+    }
 
-    var remainingBudget = localStorage.getItem("remainingBudget")
-    remainingBudget = remainingBudget - expenseAmount
-    localStorage.setItem("balanceAmount", remainingBudget)
 
+    // Retrieve the date, excess/deficit, and other relevant data from the input fields
+    var dateInput = formattedDate;
+    var dateParts = dateInput.split('/');
+    var year = dateParts[2];
+    var month = String(dateParts[1]).padStart(2, '0');
+    var day = String(dateParts[0]).padStart(2, '0');
+
+    var date = day + '/' + month + '/' + year;
+    var excessDeficit = remainingBudget;
+  
+    localforage.setItem(date, excessDeficit)
+      .then(function () {
+        document.getElementById('expense-form').reset();
+        console.log(date)
+        console.log(excessDeficit)
+        console.log('Data stored successfully!');
+      })
+      .catch(function (error) {
+        console.error('Error storing data:', error);
+      });
+
+     // var dailyBudget = parseInt(localStorage.getItem('dailyBudget'));
     // var balanceAmount = this.localStorage.getItem("balanceAmount")
     // document.getElementById('excess-deficit').textContent = balanceAmount
 
@@ -58,8 +88,6 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
 
     // excessDeficitField.textContent = accumulatedExcessDeficit;
     // localStorage.setItem("accumulatedExcessDeficit", parseFloat(accumulatedExcessDeficit))
-
-    document.getElementById('expense-form').reset();
 
     // console.log(accumulatedExcessDeficit)
     // var surplusOrDeficit = remainingBudget >= 0 ? "surplus" : "deficit";

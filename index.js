@@ -12,6 +12,35 @@ window.addEventListener('DOMContentLoaded', function () {
 
 });
 
+// document.getElementById('date-form').addEventListener('submit', function (event) {
+//   event.preventDefault();
+
+//   // Retrieve the date and text data from the input fields
+//   var dateInput = document.getElementById('date-input').value;
+//   var textData = document.getElementById('text-input').value;
+
+//   // Convert the date from dd/mm/yyyy to yyyy-mm-dd format
+//   var dateParts = dateInput.split('-');
+//   var year = dateParts[0];
+//   var month = String(dateParts[1]).padStart(2, '0');
+//   var day = String(dateParts[2]).padStart(2, '0');
+//   var date = day + '/' + month + '/' + year;
+
+//   // Store the date and text data in localForage
+//   localforage.setItem(date, textData)
+//     .then(function () {
+//       // Reset the form fields
+//       document.getElementById('date-form').reset();
+//       console.log('Data stored successfully!');
+//       console.log(date);
+//       console.log(textData);
+//     })
+//     .catch(function (error) {
+//       console.error('Error storing data:', error);
+//     });
+// });
+
+
 function resetAll(){
   localStorage.setItem("remainingBudget", 0)
   localStorage.setItem("dailyBudget", 0)
@@ -41,6 +70,5 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   resetAccumulatedExcessDeficit();
 
 });
-
 
 
