@@ -48,6 +48,8 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
     remainingBudget = remainingBudget - expenseAmount
     localStorage.setItem("remainingBudget", remainingBudget)
     document.getElementById("excess-deficit").innerHTML = remainingBudget;
+    document.getElementById("balance").innerHTML = remainingBudget;
+
 
     // var balanceAmount = this.localStorage.getItem("balanceAmount")
     // document.getElementById('excess-deficit').textContent = balanceAmount
