@@ -70,5 +70,3 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   resetAccumulatedExcessDeficit();
 
 });
-
-

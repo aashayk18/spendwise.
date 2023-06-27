@@ -9,17 +9,26 @@ window.addEventListener('DOMContentLoaded', function () {
     var windowHeight = window.innerHeight;
     var sidebarHeight = windowHeight / 2;
     sidebar.style.height = sidebarHeight + 'px';
+
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
     var dailyBudget = this.localStorage.getItem('dailyBudget');
     var balanceAmount = this.localStorage.getItem("balanceAmount")
-    // var accumulatedExcessDeficit = this.localStorage.getItem("accumulatedExcessDeficit")
+    
+    var currentDate = new Date();
+    var day = String(currentDate.getDate()).padStart(2, '0');
+    var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    var year = String(currentDate.getFullYear()).slice(-2);
+    var formattedDate = day + "/" + month + "/" + year;
+    localStorage.setItem("date", formattedDate);
     var formattedDate = this.localStorage.getItem("date")
-    document.getElementById('daily-budget-display').textContent = dailyBudget;
+
     document.getElementById('date').textContent = formattedDate;
+    document.getElementById('daily-budget-display').textContent = dailyBudget;
     document.getElementById('excess-deficit').textContent = balanceAmount
     this.localStorage.setItem("remainingBudget", dailyBudget)
 
+    // var accumulatedExcessDeficit = this.localStorage.getItem("accumulatedExcessDeficit")
     // resetAccumulatedExcessDeficit()
     // var resultMessage = this.localStorage.getItem("result")
     // document.getElementById('remaining').innerHTML = resultMessage;

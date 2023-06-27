@@ -129,23 +129,31 @@ function SimpleCalendar(selector, options) {
 }
 
 function displayCalendarData(date) {
-    
-    localforage.getItem(date)
+    localforage
+      .getItem(date)
       .then(function (excessDeficit) {
-        
         var calendarDataElement = document.getElementById('calendar-data');
         calendarDataElement.innerHTML = '';
   
         var dateElement = document.createElement('p');
-        dateElement.textContent = 'Date: ' + date;
+        dateElement.textContent = 'Summary for ' + date;
+        dateElement.style.fontWeight = 'bold'; 
+        dateElement.style.fontSize = '20px'; 
+        dateElement.style.color = '#333333'; 
         calendarDataElement.appendChild(dateElement);
   
         var excessDeficitElement = document.createElement('p');
         excessDeficitElement.textContent = 'Excess/Deficit: Rs. ' + excessDeficit;
+        excessDeficitElement.style.fontWeight = 'bold'; 
+        if (excessDeficit === null) {
+            excessDeficitElement.style.color = '#212154';
+          } else {
+            excessDeficitElement.style.color = excessDeficit < 0 ? 'red' : 'green'; 
+          }       
         calendarDataElement.appendChild(excessDeficitElement);
       })
       .catch(function (error) {
         console.error('Error retrieving data:', error);
       });
-      
   }
+  
