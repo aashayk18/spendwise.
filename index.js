@@ -16,12 +16,10 @@ function resetAll(){
   localStorage.setItem("remainingBudget", 0)
   localStorage.setItem("dailyBudget", 0)
   localStorage.setItem("balanceAmount", 0)
-  // localStorage.setItem("accumulatedExcessDeficit", 0)
 }
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
-  // sidebar.classList.toggle('sidebar--active');
 }
 
 function resetAccumulatedExcessDeficit() {
@@ -41,6 +39,3 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   resetAccumulatedExcessDeficit();
 
 });
-
-
-

@@ -11,6 +11,7 @@
     <ul>
         <li><a href="index.html">Budget</a></li>
         <li><a href="expenses.html">Expenses</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
     </ul>
 </div>
 
@@ -26,7 +27,7 @@
     <div id="result">
         <h2>Daily Budget: Rs. <span id="daily-budget-display">0</span></h2>
         <h2>Summary for <span id="date"></span></h2>
-      <p >Your Balance for the day is : <span id="balance"></span></p>
+      <p id="remaining"></p>
         <p>Excess/Deficit: Rs. <span id="excess-deficit">0</span></p>
     </div>
 
@@ -42,10 +43,11 @@
 </div>
 
 <script src="expenses.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
 
 <footer>
     <div id="creator-credits">
-      <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a></p>
+      <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a> and <a href="https://github.com/ranjan210">Ranjan K.</a></p>
     </div>
     <div id="copyright">
       <p>&copy; <span id="current-year"></span></p>
