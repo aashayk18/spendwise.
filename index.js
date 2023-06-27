@@ -10,9 +10,15 @@ window.addEventListener('DOMContentLoaded', function () {
   const currentYear = new Date().getFullYear();
   document.getElementById('current-year').textContent = currentYear;
 
+  var dailyBudget = localStorage.getItem('dailyBudget');
+  if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget != 0) {
+    window.location.href = 'expenses.html';
+  } else {
+
+  }
 });
 
-function resetAll(){
+function resetAll() {
   localStorage.setItem("remainingBudget", 0)
   localStorage.setItem("dailyBudget", 0)
   localStorage.setItem("balanceAmount", 0)

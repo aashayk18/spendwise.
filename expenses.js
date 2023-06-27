@@ -35,7 +35,8 @@ window.addEventListener('DOMContentLoaded', function () {
   const currentYear = new Date().getFullYear();
   document.getElementById('current-year').textContent = currentYear;
   var dailyBudget = this.localStorage.getItem('dailyBudget');
-
+  document.getElementById('daily-budget-display').textContent = dailyBudget;
+  
   var currentDate = new Date();
   var day = String(currentDate.getDate()).padStart(2, '0');
   var month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -45,7 +46,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var formattedDate = this.localStorage.getItem("date")
 
   document.getElementById('date').textContent = formattedDate;
-  document.getElementById('daily-budget-display').textContent = dailyBudget;
+  
 
   this.localStorage.setItem("remainingBudget", dailyBudget)
 
