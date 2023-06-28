@@ -1,4 +1,4 @@
-package com.example.webview_test;
+package com.example.spendwise;
 
 import androidx.appcompat.app.AppCompatActivity;
 
