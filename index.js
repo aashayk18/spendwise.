@@ -10,8 +10,10 @@ window.addEventListener('DOMContentLoaded', function () {
   const currentYear = new Date().getFullYear();
   document.getElementById('current-year').textContent = currentYear;
 
+  var queryParams = new URLSearchParams(window.location.search);
+  var source = queryParams.get('source');
   var dailyBudget = localStorage.getItem('dailyBudget');
-  if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget != 0) {
+  if (dailyBudget !== null && dailyBudget !== undefined  && dailyBudget !== "0" && source !== 'sidebar') {
     window.location.href = 'expenses.html';
   } else {
 
