@@ -13,11 +13,11 @@ window.addEventListener('DOMContentLoaded', function () {
   var queryParams = new URLSearchParams(window.location.search);
   var source = queryParams.get('source');
   var dailyBudget = localStorage.getItem('dailyBudget');
-  /*if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
-    window.location.href = 'expenses.html';
+  if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
+    window.location.href = 'expenses/expenses.html';
   } else {
 
-  }*/
+  }
 });
 
 function resetAll() {
@@ -37,7 +37,7 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   })
   document.getElementById('budget-form').reset();
 
-  window.location.href = 'expenses.html';
+  window.location.href = 'expenses/expenses.html';
 
 
 });

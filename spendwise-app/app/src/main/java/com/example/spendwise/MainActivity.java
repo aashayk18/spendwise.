@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 10; SM-G975F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36");
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setLoadWithOverviewMode(true);
-        webView.loadUrl("https://aashayk18-portfolio.vercel.app/");
+        webView.loadUrl("https://spendwise-ar.vercel.app/");
 
     }
 }
