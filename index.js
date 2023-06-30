@@ -13,37 +13,31 @@ window.addEventListener('DOMContentLoaded', function () {
   var queryParams = new URLSearchParams(window.location.search);
   var source = queryParams.get('source');
   var dailyBudget = localStorage.getItem('dailyBudget');
-  if (dailyBudget !== null && dailyBudget !== undefined  && dailyBudget !== "0" && source !== 'sidebar') {
+  /*if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
     window.location.href = 'expenses.html';
   } else {
 
-  }
+  }*/
 });
 
 function resetAll() {
-  localStorage.setItem("remainingBudget", 0)
-  localStorage.setItem("dailyBudget", 0)
-  localStorage.setItem("balanceAmount", 0)
+  localforage.clear();
 }
 
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-}
-
-function resetAccumulatedExcessDeficit() {
-  localStorage.setItem("accumulatedExcessDeficit", 0)
-}
 
 document.getElementById('budget-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
   var dailyBudget = parseInt(document.getElementById('daily-budget').value);
   localStorage.setItem('dailyBudget', dailyBudget);
-
+  localforage.getItem("accumulatedBalance").then((val)=>{
+      if(val==null){
+        localforage.setItem("accumulatedBalance",0)
+      }
+  })
   document.getElementById('budget-form').reset();
 
   window.location.href = 'expenses.html';
 
-  resetAccumulatedExcessDeficit();
 
 });

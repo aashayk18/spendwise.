@@ -131,7 +131,7 @@ function SimpleCalendar(selector, options) {
 function displayCalendarData(date) {
     localforage
       .getItem(date)
-      .then(function (excessDeficit) {
+      .then(function (res) {
         var calendarDataElement = document.getElementById('calendar-data');
         calendarDataElement.innerHTML = '';
   
@@ -143,14 +143,22 @@ function displayCalendarData(date) {
         calendarDataElement.appendChild(dateElement);
   
         var excessDeficitElement = document.createElement('p');
-        excessDeficitElement.textContent = 'Excess/Deficit: Rs. ' + excessDeficit;
+        var expensesTotal = document.createElement('p');
+        var dailyBudget = document.createElement('p');
+
+        excessDeficitElement.textContent = 'Excess/Deficit: Rs. ' + res.balance;
+        expensesTotal.textContent = "Total Expenses : Rs. " + res.expenses;
+        dailyBudget.textContent = "Budget : Rs. " + res.budget;
         excessDeficitElement.style.fontWeight = 'bold'; 
-        if (excessDeficit === null) {
+        if (res.balance === null) {
             excessDeficitElement.style.color = '#212154';
           } else {
-            excessDeficitElement.style.color = excessDeficit < 0 ? 'red' : 'green'; 
+            excessDeficitElement.style.color = res.balance < 0 ? 'red' : 'green'; 
           }       
         calendarDataElement.appendChild(excessDeficitElement);
+        calendarDataElement.appendChild(expensesTotal);
+        calendarDataElement.appendChild(dailyBudget);
+
       })
       .catch(function (error) {
         console.error('Error retrieving data:', error);
