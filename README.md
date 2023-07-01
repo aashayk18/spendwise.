@@ -6,6 +6,7 @@
 <h3 align="center">
     Authors: <a href="https://github.com/aashayk18">Aashay K.</a> and <a href="https://github.com/ranjan210">Ranjan K.
 </h3>
+        
 ## 💸 Description
 
 Welcome to **spendwise**! This website allows users to keep track of their daily expenses with the help of a daily budget and the feature to add new expenses.
