@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>spendwise.</title>
-  <link rel="stylesheet" type="text/css" href="../styles.css">
-  <link rel="icon" href="../favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        type="text/css"
+        href="../styles.css">
+  <link rel="icon"
+        href="../favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<div class="sidebar" id="sidebar">
+  <div class="sidebar"
+       id="sidebar">
     <ul>
       <li><a href="/index.html?source=sidebar">Budget</a></li>
       <li><a href="expenses.html">Expenses</a></li>
       <li><a href="/calendar/calendar.html">Calendar</a></li>
     </ul>
-</div>
+  </div>
 
-<div class="hamburger" id="hamburger">
+  <div class="hamburger"
+       id="hamburger">
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
-</div>
+  </div>
 
-<div id="page2" class="content-shift">
+  <div id="page2"
+       class="content-shift">
     <h1>spendwise.</h1>
 
     <div id="result">
-        <h2>Daily Budget: Rs. <span id="daily-budget-display">0</span></h2>
-        <h2>Summary for <span id="date"></span></h2>
+      <h2>Daily Budget: Rs. <span id="daily-budget-display">0</span></h2>
+      <h2>Summary for <span id="date"></span></h2>
       <p id="remaining"></p>
-        <p>Accumulated Balance: Rs. <span id="excess-deficit">0</span></p>
+      <p>Accumulated Balance: Rs. <span id="excess-deficit">0</span></p>
     </div>
 
     <br><br>
 
     <form id="expense-form">
-        <h2>Enter Daily Expenses</h2>
-        <label for="expense-amount">Expenses:</label>
-        <input type="number" id="expense-amount" placeholder="Enter your expenses for the day">
-        <br><br>
-        <button type="submit">Add</button>
+      <h2>Enter Daily Expenses</h2>
+      <label for="expense-amount">Expenses:</label>
+      <input type="number"
+             id="expense-amount"
+             placeholder="Enter your expenses for the day">
+      <br><br>
+      <button type="submit">Add</button>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
+    <script src="expenses.js"></script>
 
-<script src="expenses.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
-
-<footer>
-    <div id="creator-credits">
-      <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a> and <a href="https://github.com/ranjan210">Ranjan K.</a></p>
-    </div>
-    <div id="copyright">
-      <p>&copy; <span id="current-year"></span></p>
-    </div>
-  </footer>
-</div>
+    <footer>
+      <div id="creator-credits">
+        <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a> and <a
+             href="https://github.com/ranjan210">Ranjan K.</a></p>
+      </div>
+      <div id="copyright">
+        <p>&copy; <span id="current-year"></span></p>
+      </div>
+    </footer>
+  </div>
 
 </body>
+
 </html>

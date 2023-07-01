@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function () {
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
   // gets data related to current date and displays it
-  this.localforage.getItem(formattedDate).then((res) => {
+  localforage.getItem(formattedDate).then((res) => {
     // if today's balance exists then display
     if (res) {
       this.document.getElementById("remaining").innerHTML = "Balance : Rs. " + res.balance;
@@ -32,16 +32,22 @@ window.addEventListener('DOMContentLoaded', function () {
         "budget": dailyBudget,
         "balance": dailyBudget
       }
-      console.log(today)
-      localforage.setItem(formattedDate, today) // Sets today's data  
+      localforage.setItem(formattedDate, today)
+      localforage.getItem("currentDate").then((lastDate) => {
+        const todate = new Date();
+        const diffTime = Math.abs(todate - lastDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        localforage.setItem("currentDate", todate)
+        console.log(diffDays)
+        localforage.getItem("accumulatedBalance").then((res) => {
 
-      // set accumulated balance
-      localforage.getItem("accumulatedBalance").then((res) => {
-        res += dailyBudget
-        localforage.setItem("accumulatedBalance", res).then(displayAccumulatedBalace(res)).catch((err) => {
-          console.log(err)
+          res += (dailyBudget * diffDays)
+          localforage.setItem("accumulatedBalance", res).then(displayAccumulatedBalace(res)).catch((err) => {
+            console.log(err)
+          })
         })
       })
+
 
       this.document.getElementById("remaining").innerHTML = "Balance : Rs. " + today.balance;
 

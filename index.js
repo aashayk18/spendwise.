@@ -29,6 +29,7 @@ document.getElementById('budget-form').addEventListener('submit', function (even
 
   var dailyBudget = parseInt(document.getElementById('daily-budget').value);
   localStorage.setItem('dailyBudget', dailyBudget);
+  localforage.setItem("currentDate",new Date());
   localforage.getItem("accumulatedBalance").then((val)=>{
       if(val==null){
         localforage.setItem("accumulatedBalance",0)
