@@ -1,4 +1,4 @@
-# spendwise
+# spendwise.
 
 <h2 align="center">
     A daily budget and expense tracker to help you spend wisely!
@@ -20,7 +20,7 @@ A budget and expenditure tracker that helps you spend *and save* your money wise
 
 ## 🚀 Getting Started 
 
-To get started with My Pet Spotlight, simply visit our [website](https://spendwise-ar.vercel.app/). From there, you can start tracking your daily expenses..
+To get started with spendwise., simply visit our [website](https://spendwise-ar.vercel.app/). From there, you can start tracking your daily expenses..
 
 Simply add a daily budget, and throughout the day whenever you make an expense add it.
 
