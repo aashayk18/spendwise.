@@ -24,7 +24,6 @@ function resetAll() {
   localforage.clear();
 }
 
-
 document.getElementById('budget-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
