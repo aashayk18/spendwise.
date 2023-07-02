@@ -112,3 +112,53 @@
   margin-bottom: 5px;
   color: #666;
 }
+
+@media screen and (max-width: 480px) {
+  
+  #track {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 73%;
+    margin-bottom: 20px;
+  }
+  
+  #calendar-data {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 73%;
+    margin-bottom: 40px;
+  }
+  
+  #calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #calendar {
+    width: 300px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+ 
+}

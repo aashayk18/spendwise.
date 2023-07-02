@@ -146,7 +146,7 @@ function displayCalendarData(date) {
         var expensesTotal = document.createElement('p');
         var dailyBudget = document.createElement('p');
 
-        excessDeficitElement.textContent = 'Excess/Deficit: Rs. ' + res.balance;
+        excessDeficitElement.textContent = 'Balance: Rs. ' + res.balance;
         expensesTotal.textContent = "Total Expenses : Rs. " + res.expenses;
         dailyBudget.textContent = "Budget : Rs. " + res.budget;
         excessDeficitElement.style.fontWeight = 'bold'; 
