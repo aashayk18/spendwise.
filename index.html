@@ -37,14 +37,14 @@
       <h2>Set Daily Budget</h2>
       <label for="daily-budget">Budget:</label>
       <input type="number" 
-      onkeydown="
+  onkeydown="
     if (
       ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(event.code) ||
       (event.touches && event.touches.length === 1)
     ) {
       return true;
     }
-    const key = event.touches[0].target.innerText;
+    const key = event.key;
     const currentValue = event.target.value;
     const isNegativeSign = key === '-' && currentValue.indexOf('-') === -1;
     const isDecimalPoint = key === '.' && currentValue.indexOf('.') === -1;
@@ -53,8 +53,14 @@
       key !== ' ' &&
       !isNegativeSign &&
       !isDecimalPoint
-    );"
-      min="0" id="daily-budget" placeholder="Enter your daily budget">
+    );
+  "
+  min="0"
+  id="daily-budget"
+  placeholder="Enter your daily budget"
+/>
+
+
       <br><br>
       <button type="submit">Confirm</button>
     </form>
