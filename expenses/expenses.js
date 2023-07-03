@@ -37,8 +37,9 @@ window.addEventListener('DOMContentLoaded', function () {
         const todate = new Date();
         const diffTime = Math.abs(todate - lastDate);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        diffDays--;
         localforage.setItem("currentDate", todate)
-        console.log(diffDays)
+        console.log(lastDate+" "+diffDays)
         localforage.getItem("accumulatedBalance").then((res) => {
 
           res += (dailyBudget * diffDays)
