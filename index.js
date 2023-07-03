@@ -31,7 +31,6 @@ function getFormattedDate() {
 
 function resetAll() {
   formattedDate = getFormattedDate();
-  localforage.clear()
   localforage.removeItem(formattedDate)
 }
 
