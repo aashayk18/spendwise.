@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function () {
   this.localforage.getItem(formattedDate).then((res) => {
     // if today's balance exists then display
     if (res) {
-      this.document.getElementById("remaining").innerHTML = "Balance : " + res.balance;
+      this.document.getElementById("remaining").innerHTML = "Balance : Rs. " + res.balance;
       localforage.getItem("accumulatedBalance").then((val) => {
         displayAccumulatedBalace(val)
       })
@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function () {
         })
       })
 
-      this.document.getElementById("remaining").innerHTML = "Balance : " + today.balance;
+      this.document.getElementById("remaining").innerHTML = "Balance : Rs. " + today.balance;
 
     }
   })
@@ -70,7 +70,7 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
     remainingBalance -= expenseAmount;
     dateData.balance = remainingBalance;
     dateData.expenses = totalExpenses;
-    document.getElementById("remaining").textContent = "Balance : " + remainingBalance;
+    document.getElementById("remaining").textContent = "Balance : Rs. " + remainingBalance;
     localforage.setItem(formattedDate, dateData)
   })
 
@@ -85,6 +85,7 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
   var resultMessage = "You have " + excessOrDeficit + " of Rs. " + excessDeficit + " for " + formattedDate;
   localStorage.setItem("result", resultMessage)
   document.getElementById('remaining').innerHTML = resultMessage;*/
+  document.getElementById("expense-form").reset()
 
 });
 
