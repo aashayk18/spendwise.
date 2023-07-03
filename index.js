@@ -20,8 +20,18 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+function getFormattedDate() {
+  var currentDate = new Date();
+  var day = String(currentDate.getDate()).padStart(2, '0');
+  var month = String(currentDate.getMonth() + 1).padStart(2, '0');
+  var year = String(currentDate.getFullYear()).slice(-2);
+  var formattedDate = day + "/" + month + "/" + year;
+  return formattedDate;
+}
+
 function resetAll() {
-  localforage.clear();
+  formattedDate = getFormattedDate();
+  localforage.removeItem(formattedDate)
 }
 
 document.getElementById('budget-form').addEventListener('submit', function (event) {
