@@ -45,7 +45,7 @@
       return true;
       }
       const key = event.touches[0].target.innerText;
-      return !isNaN(Number(key)) && key !== ' ';" 
+      return !isNaN(Number(key)) && key !== ' ' && key !=='-' && key!=='.';" 
       min="0" id="daily-budget" placeholder="Enter your daily budget">
       <br><br>
       <button type="submit">Confirm</button>
