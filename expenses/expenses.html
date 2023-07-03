@@ -45,23 +45,14 @@
       <label for="expense-amount">Expenses:</label>
       <input type="number" 
       onkeydown="
-    if (
+      if (
       ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'].includes(event.code) ||
       (event.touches && event.touches.length === 1)
-    ) {
+      ) {
       return true;
-    }
-    const key = event.key;
-    const currentValue = event.target.value;
-    const isNegativeSign = key === '-' && currentValue.indexOf('-') === -1;
-    const isDecimalPoint = key === '.' && currentValue.indexOf('.') === -1;
-    return (
-      !isNaN(Number(key)) &&
-      key !== ' ' &&
-      !isNegativeSign &&
-      !isDecimalPoint
-    );
-  "
+      }
+      const key = event.touches[0].target.innerText;
+      return !isNaN(Number(key)) && key !== ' ';" 
       min="0"
       id="expense-amount" placeholder="Enter your expenses">
       <br><br>
