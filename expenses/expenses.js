@@ -7,12 +7,11 @@ window.addEventListener('DOMContentLoaded', function () {
   var sidebar = document.getElementById('sidebar');
   sidebar.style.height = window.innerHeight / 2 + 'px';
 
-  var dailyBudget = parseInt(this.localStorage.getItem('dailyBudget'));
+  var dailyBudget = parseInt(this.localforage.getItem('dailyBudget'));
   document.getElementById('daily-budget-display').textContent = dailyBudget;
 
   // gets current date
   var formattedDate = getFormattedDate()
-  localStorage.setItem("date", formattedDate);
   document.getElementById('date').textContent = formattedDate;
   document.getElementById('current-year').textContent = new Date().getFullYear();
 
@@ -36,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function () {
       localforage.getItem("currentDate").then((lastDate) => {
         const todate = new Date();
         const diffTime = Math.abs(todate - lastDate);
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         diffDays--;
         localforage.setItem("currentDate", todate)
         console.log(lastDate+" "+diffDays)
@@ -66,7 +65,6 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
   let remainingBudget;
   var expenseAmount = parseInt(document.getElementById('expense-amount').value);
   formattedDate = getFormattedDate();
-  localStorage.setItem("date", formattedDate);
   document.getElementById('date').textContent = formattedDate;
 
   localforage.getItem(formattedDate).then((dateData) => {

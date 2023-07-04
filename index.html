@@ -3,19 +3,15 @@
 
 <head>
   <title>spendwise.</title>
-  <link rel="stylesheet"
-        type="text/css"
-        href="styles.css">
-  <link rel="icon"
-        href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-        rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="sidebar"
-       id="sidebar">
+  <div class="sidebar" id="sidebar">
     <ul>
       <li><a href="index.html?source=sidebar">Budget</a></li>
       <li><a href="expenses/expenses.html">Expenses</a></li>
@@ -23,8 +19,9 @@
     </ul>
   </div>
 
-  <div class="hamburger"
-       id="hamburger">
+  <div class="overlay"></div>
+
+  <div class="hamburger" id="hamburger">
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
@@ -32,24 +29,22 @@
 
   <div id="content"></div>
 
-  <div id="page1"
-       class="content-shift">
+  <div id="page1" class="content-shift">
     <h1>spendwise.</h1>
 
     <form id="budget-form">
       <h2>Set Daily Budget</h2>
       <label for="daily-budget">Budget:</label>
-      <input type="number"
-             id="daily-budget"
-             placeholder="Enter your daily budget">
+      <input type="number" 
+      onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) 
+      ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+      id="daily-budget" placeholder="Enter your daily budget">
       <br><br>
       <button type="submit">Confirm</button>
     </form>
     <br><br>
     <div class="reset-container">
-      <button type="reset"
-              class="reset-button"
-              onclick="resetAll()">Reset</button>
+      <button type="reset" class="reset-button" onclick="resetAll()">Reset</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
 
@@ -58,7 +53,7 @@
     <footer>
       <div id="creator-credits">
         <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a> and <a
-             href="https://github.com/ranjan210">Ranjan K.</a></p>
+            href="https://github.com/ranjan210">Ranjan K.</a></p>
       </div>
       <div id="copyright">
         <p>&copy; <span id="current-year"></span></p>

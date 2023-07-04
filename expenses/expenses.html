@@ -3,35 +3,31 @@
 
 <head>
   <title>spendwise.</title>
-  <link rel="stylesheet"
-        type="text/css"
-        href="../styles.css">
-  <link rel="icon"
-        href="../favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-        rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="icon" href="../favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="sidebar"
-       id="sidebar">
+  <div class="sidebar" id="sidebar">
     <ul>
-      <li><a href="/index.html?source=sidebar">Budget</a></li>
+      <li><a href="../index.html?source=sidebar">Budget</a></li>
       <li><a href="expenses.html">Expenses</a></li>
-      <li><a href="/calendar/calendar.html">Calendar</a></li>
+      <li><a href="../calendar/calendar.html">Calendar</a></li>
     </ul>
   </div>
 
-  <div class="hamburger"
-       id="hamburger">
+  <div class="overlay"></div>
+
+  <div class="hamburger" id="hamburger">
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
     <div class="hamburger__line"></div>
   </div>
 
-  <div id="page2"
-       class="content-shift">
+  <div id="page2" class="content-shift">
     <h1>spendwise.</h1>
 
     <div id="result">
@@ -46,9 +42,10 @@
     <form id="expense-form">
       <h2>Enter Daily Expenses</h2>
       <label for="expense-amount">Expenses:</label>
-      <input type="number"
-             id="expense-amount"
-             placeholder="Enter your expenses for the day">
+      <input type="number" 
+      onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) 
+      ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+      id="expense-amount" placeholder="Enter your expenses">
       <br><br>
       <button type="submit">Add</button>
     </form>
@@ -58,7 +55,7 @@
     <footer>
       <div id="creator-credits">
         <p>Created with ❤️ by <a href="https://github.com/aashayk18">Aashay K.</a> and <a
-             href="https://github.com/ranjan210">Ranjan K.</a></p>
+            href="https://github.com/ranjan210">Ranjan K.</a></p>
       </div>
       <div id="copyright">
         <p>&copy; <span id="current-year"></span></p>
