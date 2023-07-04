@@ -7,8 +7,9 @@ window.addEventListener('DOMContentLoaded', function () {
   var sidebar = document.getElementById('sidebar');
   sidebar.style.height = window.innerHeight / 2 + 'px';
 
-  var dailyBudget = parseInt(this.localforage.getItem('dailyBudget'));
+  var dailyBudget = localStorage.getItem('dailyBudget')
   document.getElementById('daily-budget-display').textContent = dailyBudget;
+
 
   // gets current date
   var formattedDate = getFormattedDate()
@@ -38,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         diffDays--;
         localforage.setItem("currentDate", todate)
-        console.log(lastDate+" "+diffDays)
+        console.log(lastDate + " " + diffDays)
         localforage.getItem("accumulatedBalance").then((res) => {
 
           res += (dailyBudget * diffDays)

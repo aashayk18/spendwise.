@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var queryParams = new URLSearchParams(window.location.search);
   var source = queryParams.get('source');
-  var dailyBudget = localStorage.getItem('dailyBudget');
+  var dailyBudget = localforage.getItem('dailyBudget');
   if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
     window.location.href = 'expenses/expenses.html';
   } else {
@@ -28,7 +28,7 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   event.preventDefault();
 
   var dailyBudget = parseInt(document.getElementById('daily-budget').value);
-  localforage.setItem('dailyBudget', dailyBudget);
+  localStorage.setItem('dailyBudget', dailyBudget);
   localforage.setItem("currentDate",new Date());
   localforage.getItem("accumulatedBalance").then((val)=>{
       if(val==null){
