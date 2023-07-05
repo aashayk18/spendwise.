@@ -34,14 +34,18 @@ window.addEventListener('DOMContentLoaded', function () {
       }
       localforage.setItem(formattedDate, today)
       localforage.getItem("currentDate").then((lastDate) => {
-        const todate = new Date();
-        const diffTime = Math.abs(todate - lastDate);
-        var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        diffDays--;
-        localforage.setItem("currentDate", todate)
-        console.log(lastDate + " " + diffDays)
+        if (!lastDate) {
+          diffDays = 1
+        }
+        else {
+          const todate = new Date();
+          const diffTime = Math.abs(todate - lastDate);
+          var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+          diffDays--;
+        }
+        localforage.setItem("currentDate", new Date())
         localforage.getItem("accumulatedBalance").then((res) => {
-
+          console.log(diffDays)
           res += (dailyBudget * diffDays)
           localforage.setItem("accumulatedBalance", res).then(displayAccumulatedBalace(res)).catch((err) => {
             console.log(err)
