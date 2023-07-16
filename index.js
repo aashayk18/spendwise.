@@ -14,13 +14,18 @@ window.addEventListener('DOMContentLoaded', function () {
   var source = queryParams.get('source');
   var dailyBudget = localforage.getItem('dailyBudget');
   var accumulatedBalance = localforage.getItem('accumulatedBalance');
-  if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" 
-  && accumulatedBalance !== null && accumulatedBalance !== undefined && accumulatedBalance !== "0"  
-  && source !== 'sidebar') {
-    window.location.href = 'expenses/expenses.html';
-  } else {
-    
-  }
+  localforage.getItem(formattedDate).then((res) => {
+    if (res) {
+      if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0"
+        && accumulatedBalance !== null && accumulatedBalance !== undefined && accumulatedBalance !== "0"
+        && source !== 'sidebar') {
+        window.location.href = 'expenses/expenses.html';
+      } else {
+
+      }
+    }
+  })
+
 });
 
 function getFormattedDate() {
@@ -48,10 +53,10 @@ document.getElementById('budget-form').addEventListener('submit', function (even
 
   var dailyBudget = parseInt(document.getElementById('daily-budget').value);
   localStorage.setItem('dailyBudget', dailyBudget);
-  localforage.getItem("accumulatedBalance").then((val)=>{
-      if(val==null){
-        localforage.setItem("accumulatedBalance",0)
-      }
+  localforage.getItem("accumulatedBalance").then((val) => {
+    if (val == null) {
+      localforage.setItem("accumulatedBalance", 0)
+    }
   })
   document.getElementById('budget-form').reset();
 
