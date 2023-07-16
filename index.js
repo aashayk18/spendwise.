@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var dailyBudget = localforage.getItem('dailyBudget');
   localforage.getItem(formattedDate).then((res) => {
     if (res) {
-      if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
+      if (source !== 'sidebar') {
         window.location.href = 'expenses/expenses.html';
       } 
     } else {
