@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
   if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
     window.location.href = 'expenses/expenses.html';
   } else {
-    
+    window.location.href = 'index.html';
   }
 });
 
