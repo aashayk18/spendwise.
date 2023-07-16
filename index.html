@@ -52,7 +52,10 @@
     </form>
     <br><br>
     <div class="reset-container">
-      <button type="reset" class="reset-button" onclick="resetAll()">Reset</button>
+      <div class="row">
+        <button type="reset" class="reset-button" onclick="resetDay()">Reset Today</button>
+        <button type="reset" class="reset-button" onclick="resetAll()">Reset All</button>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
 

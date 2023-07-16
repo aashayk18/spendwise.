@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
   if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
     window.location.href = 'expenses/expenses.html';
   } else {
-
+    
   }
 });
 
@@ -29,10 +29,15 @@ function getFormattedDate() {
   return formattedDate;
 }
 
-function resetAll() {
+function resetDay() {
   formattedDate = getFormattedDate();
-  // localforage.clear()
   localforage.removeItem(formattedDate)
+  console.log("today's data cleared")
+}
+
+function resetAll() {
+  localforage.clear()
+  console.log("all data cleared")
 }
 
 document.getElementById('budget-form').addEventListener('submit', function (event) {
@@ -48,6 +53,5 @@ document.getElementById('budget-form').addEventListener('submit', function (even
   document.getElementById('budget-form').reset();
 
   window.location.href = 'expenses/expenses.html';
-
 
 });

@@ -148,7 +148,7 @@ button {
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -157,16 +157,24 @@ button {
   }
   
   .reset-button {
-    width: 25%;
+    width: 300px;
     padding: 10px;
     background-color: #4CAF50;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
+    color: white;
     cursor: pointer;
-    font-size: 16px;
-    margin: 0 auto;
   }
+  
+  .reset-button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 auto; */
+  }
+  
 
 #result {
     margin-top: 100px;
@@ -345,7 +353,7 @@ footer a {
         border-radius: 5px;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         width: 73%;
         text-align: center;
         margin-top: -30px;
@@ -354,6 +362,7 @@ footer a {
       
       .reset-button {
         width: 75%;
+        margin-left: 10px;
         padding: 10px;
         background-color: #4CAF50;
         color: #ffffff;
@@ -361,7 +370,7 @@ footer a {
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-        margin: 0 auto;
+        margin-left: 10px;
       }
     
     .sidebar.open~.content-shift {

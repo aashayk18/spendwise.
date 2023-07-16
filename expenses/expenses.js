@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var dailyBudget = localStorage.getItem('dailyBudget')
   document.getElementById('daily-budget-display').textContent = dailyBudget;
 
-
   // gets current date
   var formattedDate = getFormattedDate()
   document.getElementById('date').textContent = formattedDate;
@@ -53,17 +52,11 @@ window.addEventListener('DOMContentLoaded', function () {
         })
       })
 
-
       this.document.getElementById("remaining").innerHTML = "Balance : Rs. " + today.balance;
 
     }
-  })
-
-    ;
+  });
 });
-
-
-
 
 document.getElementById('expense-form').addEventListener('submit', function (event) {
   event.preventDefault();
