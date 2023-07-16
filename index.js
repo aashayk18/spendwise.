@@ -13,12 +13,9 @@ window.addEventListener('DOMContentLoaded', function () {
   var queryParams = new URLSearchParams(window.location.search);
   var source = queryParams.get('source');
   var dailyBudget = localforage.getItem('dailyBudget');
-  var accumulatedBalance = localforage.getItem('accumulatedBalance');
   localforage.getItem(formattedDate).then((res) => {
     if (res) {
-      if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0"
-        && accumulatedBalance !== null && accumulatedBalance !== undefined && accumulatedBalance !== "0"
-        && source !== 'sidebar') {
+      if (dailyBudget !== null && dailyBudget !== undefined && dailyBudget !== "0" && source !== 'sidebar') {
         window.location.href = 'expenses/expenses.html';
       } else {
 
