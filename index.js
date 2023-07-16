@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var queryParams = new URLSearchParams(window.location.search);
   var source = queryParams.get('source');
   var dailyBudget = localforage.getItem('dailyBudget');
-  if (dailyBudget !== null || dailyBudget !== undefined || dailyBudget !== "0" && source !== 'sidebar') {
+  if (dailyBudget !== null || dailyBudget !== undefined || dailyBudget !== "0" || source !== 'sidebar') {
     window.location.href = 'expenses/expenses.html';
   } else {
   
