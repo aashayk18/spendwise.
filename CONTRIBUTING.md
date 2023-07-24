@@ -15,10 +15,7 @@ We welcome contributions from the community to help us improve and expand our ap
    ```
      cd spendwise.
    ```
-3. Add your features/bug fixes:
-   ```
-     
-   ```
+3. Add your features/bug fixes
 
 If you have any questions or need further assistance, feel free to reach out. Happy coding!<br>
 Thank you for contributing to spendwise.!
