@@ -1,5 +1,9 @@
 # spendwise.
 
+<p align="center">
+<img src="https://github.com/aashayk18/spendwise./blob/master/logos/playstore%20screenshot.png" height="400px" width="750px" > 
+</p>  
+
 <h2 align="center">
     A daily budget and expense tracker to help you spend wisely!
 </h2>
