@@ -53,6 +53,8 @@ If you have any questions or need help with spendwise., please contact us at aas
   
 We are always happy to assist you and answer any questions you may have.
 
+## 👥 Contributors
+
 ## 📝 License
 
 spendwise. is licensed under the MIT License. See the [LICENSE file](https://github.com/aashayk18/spendwise/blob/master/LICENSE) for more information.
