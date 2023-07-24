@@ -35,6 +35,18 @@ Make use of the calendar functionality to access the budget and expenditure reco
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
+## 💡 Contributing
+
+We welcome contributions from the community to help improve spendwise. If you have any ideas for new features or would like to report a bug, please submit an [issue](https://github.com/aashayk18/spendwise./issues) on our GitHub [repository](https://github.com/aashayk18/spendwise.).
+
+<ins> **How to Contribute** : <ins> 
+
+1. 🍴 Fork this [repository](https://github.com/aashayk18/spendwise.).
+2. 🌿 Create a new branch for your feature or bug fix.
+3. 🔍 Read [CONTRIBUTING.md](https://github.com/aashayk18/spendwise./blob/master/CONTRIBUTING.md) carefully.
+4. 🚀 Make your changes and test them thoroughly.
+5. 📩 Submit a [pull request](https://github.com/aashayk18/spendwise./pulls) with a clear description of your changes.
+
 ## 📞 Support
 
 If you have any questions or need help with spendwise., please contact us at aashayk100@gmail.com or mynamerkt3@gmail.com 
